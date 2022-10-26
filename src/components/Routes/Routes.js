@@ -3,6 +3,7 @@ import Main from "../../pages/Main/Main";
 import Home from "../../pages/Home/Home"
 import Login from "../../pages/FormPages/Login";
 import Registration from "../../pages/FormPages/Registration";
+import ResetPass from "../../pages/FormPages/ResetPass";
 
 export const router = createBrowserRouter([
     {
@@ -22,5 +23,9 @@ export const router = createBrowserRouter([
     {
         path:'/registration',
         element:<Registration />
+    },
+    {
+        path:'/reset-password',
+        element:<ResetPass />
     }
 ])

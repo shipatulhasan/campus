@@ -145,8 +145,8 @@ const Navbar = () => {
               )}
 
               <label
-                for="Toggle2"
-                className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100"
+                htmlFor="Toggle2"
+                className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100 mx-4 lg:mx-0"
               >
                 <span className="relative">
                   <input id="Toggle2" onChange={()=>setMode(!mode)} type="checkbox" className="hidden peer" />

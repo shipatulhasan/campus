@@ -11,7 +11,7 @@ const Registration = () => {
     const [error,setError] = useState('')
     const [viewPass, setViewPass] = useState(false)
     const [viewConfirmPass, setViewConfirmPass] = useState(false)
-    const {googleSignUp} = useContext(AuthContext)
+    const {signUpWithGoogle, createUser, setUserProfile} = useContext(AuthContext)
 
 
     const handleSubmit = (e)=>{
@@ -22,18 +22,35 @@ const Registration = () => {
         const confirmPass = form.confirmPassword.value
         const userName = form.userName.value
         const photoUrl = form.photo.value
-        console.log(email,email,pass,userName,photoUrl)
+        // console.log(email,email,pass,userName,photoUrl)
+        
 
         if(pass!==confirmPass){
             setError('Both password should be matched')
+            return
         }
+
+        createUser(email,pass)
+        .then(result=>{
+            console.log(result.user)
+            toast.success('Successfully registerd')
+            handleUpdateProfile(userName,photoUrl)
+            setError('')
+            form.reset()
+        })
+        .catch(err=>{
+            setError(err.message)
+            console.error(err)
+        })
+
+
 
     }
    
 
     const handleSignUpWithGoogle = ()=>{
 
-        googleSignUp()
+        signUpWithGoogle()
         .then(result=>{
             setError('')
             console.log(result.user)
@@ -48,7 +65,16 @@ const Registration = () => {
 
     // update profile
 
-    const handleUpdateProfile = ()=>{
+    const handleUpdateProfile = (name,photoUrl)=>{
+
+        const profile = {
+            displayName:name,
+            photoURL:photoUrl
+        }
+
+        setUserProfile(profile)
+        .then(()=>{ })
+        .catch(err=>console.error(err))
       
     }
 
@@ -101,7 +127,7 @@ const Registration = () => {
                     <hr className="w-full border-gray-800  " />
                 </div>
                 <form action="" onSubmit={handleSubmit}>
-                <p className="text-base font-medium ml-4 text-red-600">{error}</p>
+                <p className="text-base font-medium mb-5 text-red-600">{error}</p>
                     <div className='grid grid-cols-1 gap-6 mt-4 md:grid-cols-2'>
                     
                     <label className="text-base font-medium leading-none text-gray-800">User Name
@@ -155,7 +181,6 @@ const Registration = () => {
                     </button>
                 </div>
                 </form>
-               
             </div>
         </div>
     </div>

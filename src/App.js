@@ -6,9 +6,14 @@ import {router} from './components/Routes/Routes'
 function App() {
 
   return (
-    <RouterProvider router={router}>
-      <Toaster />
-    </RouterProvider>
+    <>
+
+    <RouterProvider router={router} />
+    <Toaster />
+    </>
+   
+      
+   
 
   )
 }
