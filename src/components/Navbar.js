@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { GoSignOut } from "react-icons/go";
 import brand from '../asset/brand/logo.png'
 import { AuthContext } from './AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 
 
 const Navbar = () => {
@@ -108,14 +109,19 @@ const Navbar = () => {
   
               <div className="flex items-center mt-4 lg:mt-0 gap-2 ">
                 
-              <div class="w-12 h-12 overflow-hidden border-2 border-white ring-4 ring-blue-700 rounded-full hover:cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" class="object-cover w-full h-full" alt="avatar" 
-                            title={user?.displayName} />
+              <div className="w-12 h-12 overflow-hidden border-2 border-white ring-4 ring-blue-700 rounded-full hover:cursor-pointer flex items-center justify-center">
+                  {
+                      user?.photoURL? <img src={user?.photoURL} className="object-cover w-full h-full" alt="avatar" 
+                      title={user?.displayName} />
+                      :
+                      <FaUser className='w-8 h-8 ' title={user?.displayName} />
+                  }
+                            
                 </div>
-                <Link to="/" class="flex items-center p-3 text-sm text-slate-800 font-semibold capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-slate-800">
+                <Link to="/" className="flex items-center p-3 text-sm text-slate-800 font-semibold capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-slate-800">
             <GoSignOut className='text-xl text-slate-800'/>
 
-            <span class="mx-1">
+            <span className="mx-1">
                 Sign Out
             </span>
         </Link>
