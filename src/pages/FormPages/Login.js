@@ -1,15 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 
 import logo from '../../asset/brand/logo.png'
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
     const [error,setError] = useState('')
     const [viewPass, setViewPass] = useState(false)
-    const navigate = useNavigate()
+   
 
     // sign in with google
 
@@ -31,13 +31,13 @@ const Login = () => {
         <div className="h-full w-full py-16 px-4 bg-center bg-no-repeat bg-cover bg-white ">
             <div className="flex flex-col items-center justify-center">
                <Link to='/'><img className='w-1/2 mx-auto' src={logo} alt="" /></Link>
-                <div className="bg-white border border-slate-400 shadow-xl rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
+                <div className="bg-white border border-slate-400 shadow-xl rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-6">
                     <p tabIndex={0}  aria-label="Login to your account" className="text-2xl font-extrabold leading-6 text-gray-800">
                         Login to your account
                     </p>
                     <p className="text-base mt-4 font-medium leading-none text-gray-800">
                         Dont have account?{" "}
-                        <Link to='/registration' tabIndex={0} role="link" aria-label="Sign up here" className="text-base font-medium leading-none underline text-gray-800 cursor-pointer">
+                        <Link to='/registration' tabIndex={0} role="link" aria-label="Sign up here" className="text-base font-medium leading-none underline text-blue-700 cursor-pointer">
                             {" "}
                             Sign up here
                         </Link>
