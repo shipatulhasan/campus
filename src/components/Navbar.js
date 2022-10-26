@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GoSignOut } from "react-icons/go";
 import brand from '../asset/brand/logo.png'
+import { AuthContext } from './AuthProvider/AuthProvider';
 
 
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
+    const {user} = useContext(AuthContext)
+
+
     return (
         <nav className="lg:absolute z-10 w-full bg-white  dark:bg-gray-800">
         <div className="container px-6 py-1 mx-auto  lg:my-3 rounded">
@@ -105,7 +109,8 @@ const Navbar = () => {
               <div className="flex items-center mt-4 lg:mt-0 gap-2 ">
                 
               <div class="w-12 h-12 overflow-hidden border-2 border-white ring-4 ring-blue-700 rounded-full hover:cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" class="object-cover w-full h-full" alt="avatar" title='Shakib' />
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" class="object-cover w-full h-full" alt="avatar" 
+                            title={user?.displayName} />
                 </div>
                 <Link to="/" class="flex items-center p-3 text-sm text-slate-800 font-semibold capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-slate-800">
             <GoSignOut className='text-xl text-slate-800'/>
