@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import logo from '../../asset/brand/logo.png'
 
 import { Link } from 'react-router-dom';
 // import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import { AuthContext } from '../../components/AuthProvider/AuthProvider';
 
 const Login = () => {
     const [error,setError] = useState('')
     const [viewPass, setViewPass] = useState(false)
+    const {googleSignUp} = useContext(AuthContext)
    
 
     // sign in with google
 
     const handleSignInWithGoogle = ()=>{
+        googleSignUp()
+        .then(result=>{
+            console.log(result.user)
+        })
+        .catch(err=>console.error(err))
        
     }
     const handleLogin = (e)=>{

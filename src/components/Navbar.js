@@ -4,11 +4,20 @@ import { GoSignOut } from "react-icons/go";
 import brand from '../asset/brand/logo.png'
 import { AuthContext } from './AuthProvider/AuthProvider';
 import { FaUser } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 
 
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
+
+    const handleSignOut = ()=>{
+        logOut()
+        .then(()=>{
+            toast.success('Signout successfully')
+         })
+        .catch(err=>console.log(err))
+    }
 
 
     return (
@@ -108,23 +117,34 @@ const Navbar = () => {
               </div>
   
               <div className="flex items-center mt-4 lg:mt-0 gap-2 ">
-                
-              <div className="w-12 h-12 overflow-hidden border-2 border-white ring-4 ring-blue-700 rounded-full hover:cursor-pointer flex items-center justify-center">
                   {
-                      user?.photoURL? <img src={user?.photoURL} className="object-cover w-full h-full" alt="avatar" 
-                      title={user?.displayName} />
-                      :
-                      <FaUser className='w-8 h-8 ' title={user?.displayName} />
+                      user && user?.uid?
+                      <><div className="w-12 h-12 overflow-hidden border-2 border-white ring-4 ring-blue-700 rounded-full hover:cursor-pointer flex items-center justify-center">
+                      {
+                          user?.photoURL? <img src={user?.photoURL} className="object-cover w-full h-full" alt="avatar" 
+                          title={user?.displayName} />
+                          :
+                          <FaUser className='w-8 h-8 ' title={user?.displayName} />
+                      }
+                                
+                    </div>
+                    <button onClick={handleSignOut} className="flex items-center p-3 text-sm text-slate-800 font-semibold capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-slate-800">
+                <GoSignOut className='text-xl text-slate-800'/>
+    
+                <span className="mx-1">
+                    Sign Out
+                </span>
+                </button> </>
+                       
+            : 
+            <Link
+                  to="/login"
+                  className="px-3 py-2 mx-4 lg:mr-2 lg:ml-0 mt-2 text-slate-800 font-semibold transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:text-slate-500 dark:hover:bg-gray-700"
+                >
+                  Login
+                </Link>
                   }
-                            
-                </div>
-                <Link to="/" className="flex items-center p-3 text-sm text-slate-800 font-semibold capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-slate-800">
-            <GoSignOut className='text-xl text-slate-800'/>
-
-            <span className="mx-1">
-                Sign Out
-            </span>
-        </Link>
+                
   
               </div>
             </div>
