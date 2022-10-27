@@ -130,7 +130,7 @@ const Navbar = () => {
             <div className="flex items-center mt-4 lg:mt-0 gap-4 ">
               {user && user?.uid && (
                 
-                  <div className="w-12 h-12 overflow-hidden border-2 border-white ring-4 ring-blue-700 rounded-full hover:cursor-pointer flex items-center justify-center">
+                  <div className="w-11 h-11 overflow-hidden border-2 border-white ring-2 ring-blue-700 rounded-full hover:cursor-pointer flex items-center justify-center">
                     {user?.photoURL ? (
                       <img
                         src={user?.photoURL}
