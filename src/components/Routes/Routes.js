@@ -11,6 +11,7 @@ import BlogPage from "../../pages/Blog/BlogPage";
 import PrivateRoute from "../../components/Routes/PrivateRoute";
 import Checkout from "../../pages/Checkout";
 import Faq from "../../pages/Faq";
+import UserProfile from "../../pages/UserProfile";
 
 export const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
             {
                 path:'/faq',
                 element:<Faq />
+            },
+            {
+                path:'/profile',
+                element:<UserProfile />
             }
         ]
     },
