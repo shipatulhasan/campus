@@ -25,7 +25,7 @@ const Checkout = () => {
           ${price}
         </h4>
 
-        <h4 class="mt-2 text-2xl font-semibold text-gray-800 dark:text-gray-100">
+        <h4 class="mt-2 text-base md:text-xl font-semibold text-gray-800 dark:text-gray-100">
           {name}
         </h4>
         
