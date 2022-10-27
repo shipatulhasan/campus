@@ -22,7 +22,7 @@ const FeaturedCourses = () => {
         <div className='text-center'>
 
         <Link
-                href="/"
+                to="/courses"
                 aria-label=""
                 className="inline-flex text-base items-center font-semibold tracking-wider transition duration-200 bg-slate-100 bg-opacity-40 text-slate-800 px-4 py-1 border-4 border-transparent ring-blue-700 ring-4 rounded-full hover:bg-blue-700 hover:border-blue-700 hover:text-slate-100"
               >

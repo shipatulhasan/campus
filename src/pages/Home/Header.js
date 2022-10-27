@@ -32,7 +32,7 @@ const Header = () => {
               </p>
               <div className='md:flex space-y-8 md:space-y-0 gap-5 mt-10'>
               <Link
-                href="/"
+                to="/courses"
                 aria-label=""
                 className="inline-flex text-base items-center font-semibold tracking-wider transition-colors duration-200 bg-slate-100 bg-opacity-40 text-slate-800 px-4 py-1 border-4 border-transparent ring-blue-700 ring-4 rounded-full hover:bg-slate-100 hover:text-slate-800"
               >
@@ -46,7 +46,7 @@ const Header = () => {
                 </svg>
               </Link>
               <Link
-                href="/"
+                to="/courses"
                 aria-label=""
                 className="inline-flex text-base items-center font-semibold tracking-wider transition-colors duration-200 bg-blue-700 border-4 border-blue-700 hover:border-slate-100  text-slate-100 px-4 py-1 ring-blue-700 ring-4 rounded-full hover:bg-slate-100 hover:text-slate-800"
               >

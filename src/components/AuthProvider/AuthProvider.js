@@ -8,7 +8,7 @@ export const AuthContext = createContext()
 
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState()
-    const [isLoader, setLoader] = useState(false)
+    const [isLoader, setLoader] = useState(true)
 
     const auth = getAuth(app)
 
@@ -20,6 +20,8 @@ const AuthProvider = ({children}) => {
     // create user
 
     const createUser = (email,password)=>{
+
+        setLoader(true)
 
         return createUserWithEmailAndPassword(auth,email,password)
     }
@@ -61,7 +63,17 @@ const AuthProvider = ({children}) => {
 
 
     // auth info send
-    const authInfo = {user, signUpWithGoogle, logOut, createUser, setUserProfile, signInUser, resetPass, signUpWithGithub}
+    const authInfo = {
+        user, 
+        signUpWithGoogle, 
+        logOut, 
+        createUser, 
+        setUserProfile, 
+        signInUser, 
+        resetPass, 
+        signUpWithGithub, 
+        isLoader
+    }
 
     // auth set 
     useEffect(()=>{

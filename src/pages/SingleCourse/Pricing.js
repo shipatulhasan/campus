@@ -3,7 +3,7 @@ import { FaFileDownload } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Pricing = ({course}) => {
-    const { price, lesson, duration, instructor } = course;
+    const {id, price, lesson, duration, instructor } = course;
     return (
         <div class="px-4 py-4 mr-3 md:-mt-10 bg-slate-50 border border-slate-300 shadow-xl h-96">
 
@@ -21,7 +21,7 @@ const Pricing = ({course}) => {
 
 
               <Link
-                to="/"
+                to={`/checkout/${id}`}
                 aria-label=""
                 className="inline-flex mt-10 text-base items-center font-semibold tracking-wider transition-colors duration-200 bg-slate-100 bg-opacity-40 text-slate-800 px-4 py-1 border-4 border-transparent ring-blue-700 ring-4 rounded-full hover:bg-slate-100 hover:text-slate-800"
               >

@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 
 import logo from "../../asset/brand/logo.png";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../components/AuthProvider/AuthProvider";
@@ -13,12 +13,21 @@ const Login = () => {
   const [viewPass, setViewPass] = useState(false);
   const { signUpWithGoogle, signInUser, signUpWithGithub } = useContext(AuthContext);
 
+  // user redirect 
+
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+
   // sign in with google
 
   const handleSignInWithGoogle = () => {
     signUpWithGoogle()
       .then((result) => {
         // console.log(result.user);
+        toast.success('Successfully logged in')
+        navigate(from, { replace: true });
       })
       .catch((err) => console.error(err));
   };
@@ -28,6 +37,8 @@ const Login = () => {
     signUpWithGithub()
       .then((result) => {
         // console.log(result.user);
+        toast.success('Successfully logged in')
+        navigate(from, { replace: true });
       })
       .catch((err) => console.error(err));
   };
@@ -44,6 +55,7 @@ const Login = () => {
         toast.success('Successfully logged in')
         setError('')
         form.reset()
+        navigate(from, { replace: true });
     })
     .catch(err=>{
         setError(err.message)
