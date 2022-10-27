@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 import { Outlet, useLoaderData } from 'react-router-dom';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/Shared/Navbar';
 import Footer from '../Footer';
 export const CourseContext = createContext()
 const Main = () => {

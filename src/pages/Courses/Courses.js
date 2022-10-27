@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import CourseCard from '../../components/CourseCard';
+import CourseCard from '../../components/Shared/CourseCard';
 import { CourseContext } from '../Main/Main';
 import CourseHeader from './CourseHeader';
 import Sidebar from './Sidebar';

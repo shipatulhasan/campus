@@ -71,7 +71,7 @@ const Login = () => {
         </Link>
         <div className="bg-white border border-slate-400 shadow-xl rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-6">
           <p
-            tabIndex={0}
+             
             aria-label="Login to your account"
             className="text-2xl font-extrabold leading-6 text-gray-800"
           >
@@ -81,7 +81,7 @@ const Login = () => {
             Dont have account?{" "}
             <Link
               to="/registration"
-              tabIndex={0}
+               
               role="link"
               aria-label="Sign up here"
               className="text-base font-medium leading-none underline text-blue-700 cursor-pointer"
@@ -186,7 +186,7 @@ const Login = () => {
 
           <Link
             to="/reset-password"
-            tabIndex={0}
+             
             role="link"
             className=" text-base font-medium leading-none underline text-blue-700 cursor-pointer"
           >

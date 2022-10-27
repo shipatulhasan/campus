@@ -10,6 +10,7 @@ import Courses from "../../pages/Courses/Courses";
 import BlogPage from "../../pages/Blog/BlogPage";
 import PrivateRoute from "../../components/Routes/PrivateRoute";
 import Checkout from "../../pages/Checkout";
+import Faq from "../../pages/Faq";
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
                 path:'/checkout/:id',
                 loader: ({params})=>fetch(`https://campus-data-server.vercel.app/course-details/${params.id}`),
                 element:<PrivateRoute><Checkout /></PrivateRoute>
+            },
+            {
+                path:'/faq',
+                element:<Faq />
             }
         ]
     },

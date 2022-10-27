@@ -103,12 +103,12 @@ const Registration = () => {
         <div className="flex flex-col items-center justify-center">
             <Link to='/'><img className='w-1/2 mx-auto' src={logo} alt="" /></Link>
             <div className="bg-white border border-slate-400 shadow-xl rounded md:w-1/2 w-full p-10 mt-6">
-                <p tabIndex={0}  aria-label="Login to your account" className="text-2xl font-extrabold leading-6 text-gray-800">
+                <p    aria-label="Login to your account" className="text-2xl font-extrabold leading-6 text-gray-800">
                     Sign up to buy your faviourite course
                 </p>
                 <p className="text-base mt-4 font-medium leading-none text-gray-800">
                     Already have account?{" "}
-                    <Link to ='/login' tabIndex={0} role="link" aria-label="Sign up here" className="text-base font-medium leading-none underline text-blue-700 cursor-pointer">
+                    <Link to ='/login'   role="link" aria-label="Sign up here" className="text-base font-medium leading-none underline text-blue-700 cursor-pointer">
                         {" "}
                         Sign in here
                     </Link>

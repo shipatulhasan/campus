@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import CourseCard from '../../components/CourseCard';
+import CourseCard from '../../components/Shared/CourseCard';
 import { CourseContext } from '../Main/Main';
 
 const FeaturedCourses = () => {

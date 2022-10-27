@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { GoSignOut } from "react-icons/go";
-import brand from "../asset/brand/logo.png";
-import { AuthContext } from "./AuthProvider/AuthProvider";
+import brand from "../../asset/brand/logo.png";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaMoon, FaSun, FaUser } from "react-icons/fa";
 import toast from "react-hot-toast";
 
