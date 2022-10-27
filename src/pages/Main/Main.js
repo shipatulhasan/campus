@@ -1,13 +1,14 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { createContext } from 'react';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
-
+export const CourseContext = createContext()
 const Main = () => {
+    const courses = useLoaderData()
     return (
-        <div>
+        <CourseContext.Provider value={courses}>
             <Navbar />
             <Outlet />
-        </div>
+        </CourseContext.Provider>
     );
 };
 

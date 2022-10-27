@@ -5,17 +5,23 @@ import Login from "../../pages/FormPages/Login";
 import Registration from "../../pages/FormPages/Registration";
 import ResetPass from "../../pages/FormPages/ResetPass";
 import Error from "../../pages/Error";
+import SingleCourse from "../../pages/SingleCourse/SingleCourse";
 
 export const router = createBrowserRouter([
     {
         path:'/',
         element:<Main />,
         errorElement:<Error />,
-      
+        loader:()=>fetch('http://localhost:5000/courses'),
         children:[
             {
-                path:'/',
+                path:'/', 
                 element:<Home />
+            },
+            {
+                path:'/course-details/:id',
+                element:<SingleCourse />,
+                loader:({params})=>fetch(`http://localhost:5000/course-details/${params.id}`)
             }
         ]
     },
