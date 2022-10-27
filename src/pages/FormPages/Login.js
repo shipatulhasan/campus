@@ -11,12 +11,21 @@ import toast from "react-hot-toast";
 const Login = () => {
   const [error, setError] = useState("");
   const [viewPass, setViewPass] = useState(false);
-  const { signUpWithGoogle, signInUser } = useContext(AuthContext);
+  const { signUpWithGoogle, signInUser, signUpWithGithub } = useContext(AuthContext);
 
   // sign in with google
 
   const handleSignInWithGoogle = () => {
     signUpWithGoogle()
+      .then((result) => {
+        // console.log(result.user);
+      })
+      .catch((err) => console.error(err));
+  };
+  // sign in with gitgub
+
+  const handleSignInWithGithub = () => {
+    signUpWithGithub()
       .then((result) => {
         // console.log(result.user);
       })
@@ -99,7 +108,7 @@ const Login = () => {
                 />
               </svg>
             </button>
-            <button aria-label="Continue with github">
+            <button onClick={handleSignInWithGithub} aria-label="Continue with github">
               <svg
                 width={21}
                 height={20}

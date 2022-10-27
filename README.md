@@ -1,10 +1,10 @@
-# Smart Home Starter Repository
+# Welcome to my web apps
 
-An E-commerce platform for buying high quality Smart Home Appliances at extremely affordable Price.
+An Learning platform Where you will get high quality Market demanding courses , greate community, Best mentor for your future goals. We provide premium subcription here and it's a life time subcription.
 
 
 ## Live Link
-Hosted in Netlify -> [Smart Home](https://shome-shop.netlify.app/)
+Hosted in Firebase -> [Campus](https://campus-6e0f2.web.app/)
 
 ## Context API
 

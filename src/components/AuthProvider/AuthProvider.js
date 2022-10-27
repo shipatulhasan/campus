@@ -43,7 +43,8 @@ const AuthProvider = ({children}) => {
 
     // create user using github
     const signUpWithGithub = ()=>{
-
+        
+        return signInWithPopup(auth, githubProvider)
     }
 
     // signout functionality
@@ -60,7 +61,7 @@ const AuthProvider = ({children}) => {
 
 
     // auth info send
-    const authInfo = {user, signUpWithGoogle, logOut, createUser, setUserProfile, signInUser, resetPass}
+    const authInfo = {user, signUpWithGoogle, logOut, createUser, setUserProfile, signInUser, resetPass, signUpWithGithub}
 
     // auth set 
     useEffect(()=>{

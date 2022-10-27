@@ -25,7 +25,7 @@ const Pricing = ({course}) => {
                 aria-label=""
                 className="inline-flex mt-10 text-base items-center font-semibold tracking-wider transition-colors duration-200 bg-slate-100 bg-opacity-40 text-slate-800 px-4 py-1 border-4 border-transparent ring-blue-700 ring-4 rounded-full hover:bg-slate-100 hover:text-slate-800"
               >
-                Place an order
+                Get premium access
                 <svg
                   className="inline-block w-3 ml-2"
                   fill="currentColor"

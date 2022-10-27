@@ -7,6 +7,7 @@ import ResetPass from "../../pages/FormPages/ResetPass";
 import Error from "../../pages/Error";
 import SingleCourse from "../../pages/SingleCourse/SingleCourse";
 import Courses from "../../pages/Courses/Courses";
+import BlogPage from "../../pages/Blog/BlogPage";
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path:'/courses',
                 element:<Courses />
+            },
+            {
+                path:'/blog',
+                element:<BlogPage />
             }
         ]
     },
