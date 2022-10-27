@@ -6,13 +6,14 @@ import Registration from "../../pages/FormPages/Registration";
 import ResetPass from "../../pages/FormPages/ResetPass";
 import Error from "../../pages/Error";
 import SingleCourse from "../../pages/SingleCourse/SingleCourse";
+import Courses from "../../pages/Courses/Courses";
 
 export const router = createBrowserRouter([
     {
         path:'/',
         element:<Main />,
         errorElement:<Error />,
-        loader:()=>fetch('http://localhost:5000/courses'),
+        loader:()=>fetch('https://campus-data-server.vercel.app/courses'),
         children:[
             {
                 path:'/', 
@@ -21,7 +22,11 @@ export const router = createBrowserRouter([
             {
                 path:'/course-details/:id',
                 element:<SingleCourse />,
-                loader:({params})=>fetch(`http://localhost:5000/course-details/${params.id}`)
+                loader:({params})=>fetch(`https://campus-data-server.vercel.app/course-details/${params.id}`)
+            },
+            {
+                path:'/courses',
+                element:<Courses />
             }
         ]
     },

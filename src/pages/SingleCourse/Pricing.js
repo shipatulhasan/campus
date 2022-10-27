@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Pricing = ({course}) => {
     const { price, lesson, duration, instructor } = course;
     return (
-        <div class="px-4 py-4 mr-3 md:-mt-10 bg-slate-50 border border-slate-300 shadow-xl ">
+        <div class="px-4 py-4 mr-3 md:-mt-10 bg-slate-50 border border-slate-300 shadow-xl h-96">
 
         <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">${price}</h4>
         

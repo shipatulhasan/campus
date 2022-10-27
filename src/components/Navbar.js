@@ -83,29 +83,24 @@ const Navbar = () => {
           >
             <div className="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-10">
               <Link
-                to="/"
+                to="/courses"
                 className="px-3 py-2 mx-6 lg:mr-2 lg:ml-0 mt-2 text-slate-800 font-semibold transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:text-slate-500 dark:hover:bg-gray-700"
               >
-                Join Slack
+                Courses
               </Link>
               <Link
-                to="/"
+                to="/faq"
                 className="px-3 py-2 mx-6 lg:mr-2 lg:ml-0 mt-2 text-slate-800 font-semibold transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:text-slate-500 dark:hover:bg-gray-700"
               >
-                Browse Topics
+                Faq
               </Link>
               <Link
-                to="/"
+                to="/blog"
                 className="px-3 py-2 mx-6 lg:mr-2 lg:ml-0 mt-2 text-slate-800 font-semibold transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:text-slate-500 dark:hover:bg-gray-700"
               >
-                Random Item
+                Blog
               </Link>
-              <Link
-                to="/"
-                className="px-3 py-2 mx-6 lg:mr-2 lg:ml-0 mt-2 text-slate-800 font-semibold transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:text-slate-500 dark:hover:bg-gray-700"
-              >
-                Experts
-              </Link>
+             
               {
                   user && user?.uid ? 
                   <button

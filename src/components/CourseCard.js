@@ -9,7 +9,7 @@ const CourseCard = ({ course }) => {
 
   return (
       <Link to = {`/course-details/${id}`}>
-    <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg shadow-slate-300 flex flex-col justify-between">
+    <div className="w-full h-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg shadow-slate-300 flex flex-col justify-between">
       <div className="card-header">
         <img className="p-5 w-full h-56 rounded-3xl" src={img} alt="avatar" />
         <div className="px-6 py-4">
