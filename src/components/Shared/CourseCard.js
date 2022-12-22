@@ -9,7 +9,7 @@ const CourseCard = ({ course }) => {
 
   return (
       <Link to = {`/course-details/${id}`}>
-    <div className="w-full h-full max-w-sm overflow-hidden bg-white  shadow-lg rounded border border-slate-300 shadow-slate-300 flex flex-col justify-between">
+    <div className="w-full h-full max-w-sm overflow-hidden bg-white  shadow-lg rounded border border-slate-300 shadow-slate-300 flex flex-col justify-between dark:bg-gray-800">
       <div className="card-header">
         <img className="p-5 w-full h-56 rounded-3xl" src={img} alt="avatar" />
         <div className="px-6 py-4">
@@ -37,8 +37,8 @@ const CourseCard = ({ course }) => {
              
           </p>
           </div>
-          <p className="py-2 text-gray-700 font-bold text-xl">
-          <span className="font-bold text-blue-700">Price: </span>
+          <p className="py-2 text-gray-700 font-bold text-xl dark:text-gray-200">
+          <span className="font-bold text-blue-700 dark:text-gray-200">Price: </span>
               ${price}
           </p>
         </div>

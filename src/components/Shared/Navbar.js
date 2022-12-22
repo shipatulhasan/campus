@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import { GoSignOut } from "react-icons/go";
 import brand from "../../asset/brand/logo.png";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { FaMoon, FaSun, FaUser } from "react-icons/fa";
+// import { FaMoon, FaSun, FaUser } from "react-icons/fa";
+import {  FaUser } from "react-icons/fa";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-  const [mode, setMode] = useState(false)
-  const { user, logOut } = useContext(AuthContext);
+  // const [mode, setMode] = useState(false)
+  const { user, logOut, } = useContext(AuthContext);
+
+
 
   const handleSignOut = () => {
     logOut()
@@ -18,6 +21,11 @@ const Navbar = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  // const handleMode = ()=>{
+  //   setMode(!mode)
+  //   theme === `light` ? setTheme(`dark`) : setTheme(`light`);
+  // }
 
   return (
     <nav className="z-10 w-full bg-white  dark:bg-gray-800">
@@ -139,23 +147,29 @@ const Navbar = () => {
                   </Link>
               )}
 
-              <label
+              {/* toggle */}
+
+              {/* <label
                 htmlFor="Toggle2"
                 className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100 mx-4 lg:mx-0"
               >
                 <span className="relative">
-                  <input id="Toggle2" onChange={()=>setMode(!mode)} type="checkbox" className="hidden peer" />
+                  <input id="Toggle2" onChange={handleMode} type="checkbox" className="hidden peer" />
                   <div className="w-10 h-4 rounded-full shadow bg-gray-100 peer-checked:bg-slate-700">
                       
                   </div>
-                  <div className={`absolute left-0 w-4 h-4 rounded-full  -inset-y-1 peer-checked:right-0 text-slate-900 peer-checked:left-auto ${!mode ? 'bg-yellow-500' : 'bg-slate-100'} `}>
+                  <div  className={`absolute left-0 w-4 h-4 rounded-full  -inset-y-1 peer-checked:right-0 text-slate-900 peer-checked:left-auto ${!mode ? 'bg-yellow-500' : 'bg-slate-100'} `}>
                       {
                           mode ? <FaMoon /> : <FaSun />
+                          
                       }
                   
                   </div>
                 </span>
-              </label>
+              </label> */}
+
+              {/* toggle end */}
+
             </div>
           </div>
         </div>

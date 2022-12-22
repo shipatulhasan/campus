@@ -61,7 +61,7 @@ const UserProfile = () => {
                   id="username"
                   name="username"
                   defaultValue={user?.displayName}
-                  className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                  className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-800 text-gray-800 dark:text-gray-400"
                   placeholder="@example"
                 />
               </div>
@@ -76,9 +76,10 @@ const UserProfile = () => {
                   type="email"
                   id="email"
                   name="email"
+                  defaultValue={user?.email}
                   readOnly
-                  className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
-                  placeholder={user?.email}
+                  className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-800 text-gray-800 dark:text-gray-400"
+                  
                 />
               </div>
               <div className="mt-5 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
@@ -93,7 +94,7 @@ const UserProfile = () => {
                   id="username"
                   name="username"
                   defaultValue={user?.photoURL}
-                  className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-500 text-gray-500 dark:text-gray-400"
+                  className="border border-gray-300 dark:border-gray-700 pl-3 py-3 shadow-sm rounded text-sm focus:outline-none focus:border-indigo-700 bg-transparent placeholder-gray-800 text-gray-800 dark:text-gray-400"
                   placeholder="@example"
                 />
               </div>

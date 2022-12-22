@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCheck, FaChevronRight } from 'react-icons/fa';
+import {  FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Sidebar = ({courses}) => {

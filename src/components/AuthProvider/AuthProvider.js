@@ -4,18 +4,21 @@ import {app} from '../../firebase/firebase.init'
 
 
 export const AuthContext = createContext() 
-
+const auth = getAuth(app)
 
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState()
     const [isLoader, setLoader] = useState(true)
+    const [theme, setTheme] = useState(`light`);
 
-    const auth = getAuth(app)
+    
 
 
     //provider
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
+
+    
 
     // create user
 
@@ -72,7 +75,9 @@ const AuthProvider = ({children}) => {
         signInUser, 
         resetPass, 
         signUpWithGithub, 
-        isLoader
+        isLoader,
+        theme,
+        setTheme
     }
 
     // auth set 
@@ -88,7 +93,7 @@ const AuthProvider = ({children}) => {
 
     
     return (
-        <AuthContext.Provider value={authInfo}>
+        <AuthContext.Provider value={authInfo} className={`${theme}:bg-slate-800`}>
             {children}
         </AuthContext.Provider>
     );
