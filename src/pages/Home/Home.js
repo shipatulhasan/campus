@@ -3,6 +3,7 @@ import AboutSection from './AboutSection';
 import FeaturedCourses from './FeaturedCourses';
 import FeatureSection from './FeatureSection';
 import Header from './Header';
+import PartnerSection from './PartnerSection';
 import ReviewSection from './ReviewSection/ReviewSection';
 
 const Home = () => {
@@ -20,6 +21,9 @@ const Home = () => {
              <FeaturedCourses />
              <div className='mt-5 mb-20'>
                  <ReviewSection />
+             </div>
+             <div>
+                 <PartnerSection />
              </div>
 
         </div>
